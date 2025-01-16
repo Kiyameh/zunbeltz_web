@@ -1,0 +1,36 @@
+---
+import {getCollection} from 'astro:content'
+const techniques = await getCollection('techniques')
+---
+
+<nav class="w-72 h-svh bg-red-100">
+  <ul>
+    <li>
+      <a href="/">Volver a Zunbeltz</a>
+    </li>
+    <li>
+      <a href="/escuela/recorrido">Recorrido formativo</a>
+    </li>
+    <li>
+      <a href="/escuela/cursos">Cursos</a>
+    </li>
+    <li>
+      <a href="/escuela/biblioteca">Biblioteca</a>
+    </li>
+    <li>
+      <a href="/escuela/">Técnicas</a>
+    </li>
+  </ul>
+  <nav>
+    <h3 class="text-lg mt-6">Índice de técnicas</h3>
+    <ul>
+      {
+        techniques.map((technique) => (
+          <li>
+            <a href={`/tecnicas/${technique.id}`}>{technique.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</nav>

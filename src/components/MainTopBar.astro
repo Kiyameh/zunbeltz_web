@@ -1,0 +1,37 @@
+---
+import {Search} from 'lucide-react'
+---
+
+<nav
+  class="flex flex-row items-center justify-between p-4 h-12 bg-card border-border border text-foreground"
+>
+  <p>Logo</p>
+  <ul class="flex flex-row gap-4">
+    <li>
+      <a href="/escuela">Escuela</a>
+    </li>
+    <li>
+      <a href="/navarra">Conoce Navarra</a>
+    </li>
+    <li>
+      <a href="/">La falla</a>
+    </li>
+    <li>
+      <a href="/deporte">Deporte</a>
+    </li>
+    <li>
+      <a href="/ciencia">Ciencia</a>
+    </li>
+    <li>
+      <a href="/tienda">Tienda</a>
+    </li>
+  </ul>
+  <div class="flex flex-row items-center gap-2">
+    <Search />
+    <input
+      type="text"
+      class="p-2 w-96 max-w-[60vw] border border-border rounded-md"
+      placeholder={'Search...'}
+    />
+  </div>
+</nav>

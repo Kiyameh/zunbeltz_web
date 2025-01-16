@@ -1,0 +1,10 @@
+---
+import SchoolLeftSidebar from '@/components/SchoolLeftSidebar.astro'
+import SchoolTopbar from '@/components/SchoolTopbar.astro'
+---
+
+<SchoolTopbar />
+<div class="flex flex-row h-svh">
+  <SchoolLeftSidebar />
+  <slot />
+</div>

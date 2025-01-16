@@ -1,0 +1,30 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import SchoolLayout from '@/layouts/SchoolLayout.astro'
+import {render} from 'astro:content'
+import {getCollection} from 'astro:content'
+
+export async function getStaticPaths() {
+  const techniques = await getCollection('techniques')
+
+  return techniques.map((technique) => ({
+    params: {
+      categoria: technique.id.split('/')[0],
+      tecnica: technique.id.split('/')[1],
+    },
+    props: {technique},
+  }))
+}
+
+const {technique} = Astro.props
+const {Content} = await render(technique)
+---
+
+<BaseLayout pageTitle={technique.data.title}>
+  <SchoolLayout>
+    <div>
+      {technique}
+      <Content />
+    </div>
+  </SchoolLayout>
+</BaseLayout>

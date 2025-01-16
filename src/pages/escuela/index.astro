@@ -1,0 +1,23 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import SchoolLayout from '@/layouts/SchoolLayout.astro'
+import {getCollection} from 'astro:content'
+const techniques = await getCollection('techniques')
+---
+
+<BaseLayout pageTitle="Escuela Zunbeltz">
+  <SchoolLayout>
+    <main>
+      <h1>Técnicas</h1>
+      <ul>
+        {
+          techniques.map((technique) => (
+            <li>
+              <a href={`/tecnicas/${technique.id}`}>{technique.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </SchoolLayout>
+</BaseLayout>
