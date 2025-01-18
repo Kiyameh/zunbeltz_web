@@ -1,0 +1,23 @@
+---
+import {getCollection} from 'astro:content'
+const posts = (await getCollection('posts')).sort(
+  (a, b) => b.data.createdAt.valueOf() - a.data.createdAt.valueOf()
+)
+---
+
+<h2 class="text-2xl">Otros artículos</h2>
+<ul class="list-none">
+  {
+    posts.map((entry) => (
+      <li>
+        <a
+          class="zunbeltz-anchor"
+          href={`/blog/${entry.id}`}
+        >
+          Entrada:
+          {entry.data.title}
+        </a>
+      </li>
+    ))
+  }
+</ul>

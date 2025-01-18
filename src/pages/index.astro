@@ -10,9 +10,9 @@ const posts = (await getCollection('posts')).sort(
 
 <BaseLayout pageTitle="La falla de Zunbeltz">
   <BlogLayout>
-    <main class="max-w-5xl h-svh m-auto flex flex-col gap-4">
+    <div class="flex flex-col gap-4">
       <h1 class="text-4xl">La falla de Zunbeltz</h1>
       {posts.map((post) => <BlogPostCover post={post} />)}
-    </main>
+    </div>
   </BlogLayout>
 </BaseLayout>
