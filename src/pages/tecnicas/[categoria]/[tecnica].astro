@@ -23,7 +23,9 @@ const {Content} = await render(technique)
 <BaseLayout pageTitle={technique.data.title}>
   <SchoolLayout>
     <div>
-      {technique}
+      {technique.data.author.id}
+      {technique.data.tags.map((tag) => <span>{tag.id}</span>)}
+
       <Content />
     </div>
   </SchoolLayout>

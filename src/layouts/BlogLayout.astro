@@ -1,9 +1,13 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import MainTopBar from '@/components/MainTopBar.astro'
+import BlogRightSidebar from '@/components/blog/BlogRightSidebar.astro'
 ---
 
 <BaseLayout>
   <MainTopBar />
-  <slot />
+  <div class="flex flex-row">
+    <slot />
+    <BlogRightSidebar />
+  </div>
 </BaseLayout>

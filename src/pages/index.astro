@@ -1,10 +1,18 @@
 ---
+import BlogPostCover from '@/components/blog/BlogPostCover.astro'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import BlogLayout from '@/layouts/BlogLayout.astro'
+import {getCollection} from 'astro:content'
+const posts = (await getCollection('posts')).sort(
+  (a, b) => b.data.createdAt.valueOf() - a.data.createdAt.valueOf()
+)
 ---
 
 <BaseLayout pageTitle="La falla de Zunbeltz">
   <BlogLayout>
-    <p>Blog</p>
+    <main class="max-w-5xl h-svh m-auto flex flex-col gap-4">
+      <h1 class="text-4xl">La falla de Zunbeltz</h1>
+      {posts.map((post) => <BlogPostCover post={post} />)}
+    </main>
   </BlogLayout>
 </BaseLayout>
