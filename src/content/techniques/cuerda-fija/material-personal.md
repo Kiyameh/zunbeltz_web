@@ -1,6 +1,7 @@
 ---
 title: Material personal
 description: Material personal
+category: Cuerda fija
 tags: [material]
 author: andoni
 createdAt: 2025/01/16

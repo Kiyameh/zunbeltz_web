@@ -7,6 +7,17 @@ const techniques = await getCollection('techniques')
 
 <BaseLayout pageTitle="Escuela Zunbeltz">
   <SchoolLayout>
-    <h1>SchoolLanding</h1>
+    <main>
+      <h1>Técnicas</h1>
+      <ul>
+        {
+          techniques.map((technique) => (
+            <li>
+              <a href={`/tecnicas/${technique.id}`}>{technique.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
   </SchoolLayout>
 </BaseLayout>

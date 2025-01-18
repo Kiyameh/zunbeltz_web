@@ -1,0 +1,36 @@
+---
+import TreeView from '@/components/interactives/TreeView.astro'
+
+const links = [
+  {
+    category: 'Cursos de espeleología',
+    link: '/escuela/cursos/espeleologia-iniciacion',
+    name: 'Iniciación a la espeleología',
+  },
+  {
+    category: 'Cursos de espeleología',
+    link: '/escuela/cursos/espeleologia-perfeccionamiento',
+    name: 'Perfeccionamiento',
+  },
+  {
+    category: 'Cursos de espeleología',
+    link: '/escuela/cursos/espeleologia-instalacion',
+    name: 'Instalación de cavidades',
+  },
+  {
+    category: 'Cursos de espeleología',
+    link: '/escuela/cursos/espeleologia-rescate',
+    name: 'Primera intervención',
+  },
+  {
+    category: 'Cursos de espeleología',
+    link: '/escuela/cursos/espeleologia-topografia',
+    name: 'Topografía espeleológica',
+  },
+]
+---
+
+<div class="space-y-2">
+  <p>Índice de cursos</p>
+  <TreeView links={links} />
+</div>

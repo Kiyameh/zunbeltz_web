@@ -17,6 +17,7 @@ const techniques = defineCollection({
   loader: glob({pattern: '**/*.md', base: './src/content/techniques'}),
   schema: z.object({
     title: z.string(),
+    category: z.string(),
     description: z.string(),
     tags: z.array(reference('tags')),
     author: reference('authors'),

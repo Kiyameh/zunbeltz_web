@@ -1,0 +1,21 @@
+---
+import {getCollection} from 'astro:content'
+import TreeView from '@/components/interactives/TreeView.astro'
+import type {LinkItem} from '@/lib/groupLinksByCategory'
+
+const techniques = await getCollection('techniques')
+const links: LinkItem[] = techniques.map((technique) => ({
+  category: technique.data.category,
+  link: '/escuela/tecnicas/' + technique.id,
+  name: technique.data.title,
+}))
+---
+
+<div class="space-y-2">
+  <a
+    class="zunbeltz-anchor"
+    href="/escuela/tecnicas"
+    >Índice de técnicas</a
+  >
+  <TreeView links={links} />
+</div>

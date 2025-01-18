@@ -1,22 +1,19 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import MainTopBar from '@/components/MainTopBar.astro'
 import OtherArticles from '@/components/blog/OtherArticles.astro'
+import TopBar from '@/components/TopBar/TopBar.astro'
 ---
 
-<BaseLayout>
-  <MainTopBar />
-
-  <div class="flex flex-row">
-    <main class="w-full">
-      <div class="max-w-5xl mt-14 mx-auto px-2">
-        <slot />
-      </div>
-    </main>
-    <aside class="min-w-80 md:block hidden">
-      <div class="fixed w-80 p-4 right-0 top-28">
-        <OtherArticles />
-      </div>
-    </aside>
-  </div>
-</BaseLayout>
+<TopBar />
+<div class="flex flex-row">
+  <main class="w-full">
+    <div class="max-w-5xl mt-14 mx-auto px-2">
+      <slot />
+    </div>
+  </main>
+  <aside class="min-w-80 md:block hidden">
+    <div class="fixed w-80 p-4 right-0 top-28">
+      <OtherArticles />
+    </div>
+  </aside>
+</div>

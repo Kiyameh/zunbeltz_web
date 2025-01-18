@@ -1,10 +1,21 @@
 ---
-import SchoolLeftSidebar from '@/components/school/SchoolLeftSidebar.astro'
-import SchoolTopbar from '@/components/school/SchoolTopbar.astro'
+import CoursesIndex from '@/components/school/CoursesIndex.astro'
+import LibraryIndex from '@/components/school/LibraryIndex.astro'
+import SchoolMainNavigation from '@/components/school/SchoolMainNavigation.astro'
+import TechniquesIndex from '@/components/school/TechniquesIndex.astro'
+import SchoolTopbar from '@/components/TopBar/SchoolTopbar.astro'
+const url = Astro.request.url
 ---
 
 <SchoolTopbar />
-<div class="flex flex-row h-svh">
-  <SchoolLeftSidebar />
-  <slot />
+<div class="flex flex-row">
+  <aside class="bg-popover w-80 h-screen p-4 pt-28 space-y-6">
+    <SchoolMainNavigation />
+    {url.includes('/escuela/tecnicas') && <TechniquesIndex />}
+    {url.includes('/escuela/cursos') && <CoursesIndex />}
+    {url.includes('/escuela/biblioteca') && <LibraryIndex />}
+  </aside>
+  <main class="w-full p-8 pt-28">
+    <slot />
+  </main>
 </div>

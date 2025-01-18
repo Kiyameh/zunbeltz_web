@@ -1,0 +1,41 @@
+---
+const url = Astro.request.url
+---
+
+<ul class="flex flex-col gap-1 p-4 border border-border rounded-xl bg-muted">
+  <li>
+    <a
+      class="zunbeltz-anchor text-lg"
+      href="/"
+      >Volver a Zunbeltz</a
+    >
+  </li>
+  <li>
+    <a
+      class={`zunbeltz-anchor ${url.includes('/escuela/recorrido') ? 'selected-anchor' : ''}`}
+      href="/escuela/recorrido"
+      >Recorrido formativo</a
+    >
+  </li>
+  <li>
+    <a
+      class={`zunbeltz-anchor ${url.includes('/escuela/cursos') ? 'selected-anchor' : ''}`}
+      href="/escuela/cursos"
+      >Cursos</a
+    >
+  </li>
+  <li>
+    <a
+      class={`zunbeltz-anchor ${url.includes('/escuela/biblioteca') ? 'selected-anchor' : ''}`}
+      href="/escuela/biblioteca"
+      >Biblioteca</a
+    >
+  </li>
+  <li>
+    <a
+      class={`zunbeltz-anchor ${url.includes('/escuela/tecnicas') ? 'selected-anchor' : ''}`}
+      href="/escuela/tecnicas"
+      >Técnicas</a
+    >
+  </li>
+</ul>

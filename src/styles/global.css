@@ -29,6 +29,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --glassmorph: rgba(196, 183, 255, 0.1);
   }
 
   .dark {
@@ -56,6 +57,7 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --glassmorph: rgba(9, 3, 87, 0.1);
   }
 }
 
@@ -107,4 +109,15 @@ h1 {
   transform: scaleX(0);
   transform-origin: top left;
   transition: transform 0.3s ease;
+}
+
+.selected-anchor {
+  color: hsl(var(--primary));
+}
+
+/* Glassmorphism para superficies */
+
+.glassmorphism {
+  background: var(--glassmorph);
+  backdrop-filter: blur(10px);
 }

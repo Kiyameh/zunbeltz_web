@@ -1,0 +1,19 @@
+---
+import ThemeIcon from '@/components/TopBar/ThemeIcon.astro'
+import SearchButton from '@/components/TopBar/SearchButton.astro'
+import MainNavigation from '@/components/TopBar/MainNavigation.astro'
+import Logo from '@/components/TopBar/Logo.astro'
+---
+
+<nav class="fixed top-4 w-full flex items-center justify-center">
+  <div
+    class="w-[90%] flex flex-row items-center justify-between p-4 h-14 border-border border text-foreground rounded-full glassmorphism"
+  >
+    <Logo />
+    <MainNavigation />
+    <div class="flex flex-row items-center gap-3">
+      <SearchButton />
+      <ThemeIcon />
+    </div>
+  </div>
+</nav>

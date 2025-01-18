@@ -1,0 +1,48 @@
+---
+const url = Astro.request.url
+---
+
+<ul class="flex flex-row gap-8 whitespace-nowrap">
+  <li>
+    <a
+      class={`zunbeltz-anchor ${url.includes('/escuela') ? 'selected-anchor' : ''}`}
+      href="/escuela"
+      >Escuela</a
+    >
+  </li>
+  <li>
+    <a
+      class={`zunbeltz-anchor ${url.includes('/navarra') ? 'selected-anchor' : ''}`}
+      href="/navarra"
+      >Conoce Navarra</a
+    >
+  </li>
+  <li>
+    <a
+      class={`zunbeltz-anchor ${url.split('/')[3] === '' || url.includes('blog') ? 'selected-anchor' : ''}`}
+      href="/"
+      >La falla</a
+    >
+  </li>
+  <li>
+    <a
+      class={`zunbeltz-anchor ${url.includes('/deporte') ? 'selected-anchor' : ''}`}
+      href="/deporte"
+      >Deporte</a
+    >
+  </li>
+  <li>
+    <a
+      class={`zunbeltz-anchor ${url.includes('/ciencia') ? 'selected-anchor' : ''}`}
+      href="/ciencia"
+      >Ciencia</a
+    >
+  </li>
+  <li>
+    <a
+      class={`zunbeltz-anchor ${url.includes('/tienda') ? 'selected-anchor' : ''}`}
+      href="/tienda"
+      >Tienda</a
+    >
+  </li>
+</ul>
